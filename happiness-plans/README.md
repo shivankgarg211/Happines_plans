@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Overview
+
+This website is built as an internship task for Happiness Plans.  
+**We have used the following tools and technologies:**
+- **HTML**
+- **Tailwind CSS**
+- **JavaScript**
+- **React.js**
+
 ## Available Scripts
 
 In the project directory, you can run:
