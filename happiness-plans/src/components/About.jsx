@@ -57,10 +57,10 @@ const About = () => {
         </p>
       </div>
 
-      {/* ✅ Right: Image */}
+      {/*  Right: Image */}
       <div className="md:w-1/2" ref={imageRef}>
         <img
-          src="/imagemeditation.jpg" // ✅ Replace with your image
+          src="/imagemeditation.jpg" //  Replace with your image
           alt="About Happiness Plans"
           className="rounded-xl shadow-lg"
         />
