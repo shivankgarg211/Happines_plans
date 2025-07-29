@@ -40,7 +40,7 @@ const Contact = () => {
       {/*  Left: Image */}
       <div className="md:w-1/2" ref={imageRef}>
         <img
-          src="/image.jpg"
+          src="/Image.jpg"
           alt="Team Collaboration"
           className="rounded-xl shadow-md w-full object-cover"
         />
