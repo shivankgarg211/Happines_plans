@@ -2,18 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 const Hero = () => {
-  const bgRef = useRef(null);    // ✅ Background section ref
-  const textRef = useRef(null);  // ✅ Right content ref
+  const bgRef = useRef(null);
+  const textRef = useRef(null);
 
   useEffect(() => {
-    // ✅ Background image animation
     gsap.fromTo(
       bgRef.current,
       { scale: 1.2, opacity: 0 },
       { scale: 1, opacity: 1, duration: 2, ease: 'power3.out' }
     );
 
-    // ✅ Text on image animation
     gsap.from(textRef.current, {
       opacity: 0,
       y: 40,
@@ -26,7 +24,7 @@ const Hero = () => {
   return (
     <section
       ref={bgRef}
-      className="relative min-h-screen bg-cover bg-center flex items-center px-4"
+      className="relative min-h-screen bg-cover bg-center flex flex-col md:flex-row items-center justify-between px-4 py-8"
       style={{
         backgroundImage: "url('/hero.jpg')",
       }}
@@ -36,25 +34,9 @@ const Hero = () => {
         Empowering Businesses with <br /> Smart Web Solutions
       </div>
 
-      {/* ✅ Right-Side Text on Image (animated) */}
-      <div
-        ref={textRef}
-        className="absolute left-6 bottom-20 text-white max-w-md space-y-3 bg-black bg-opacity-40 p-4 rounded-lg backdrop-blur-sm"
-      >
-        <h2 className="text-2xl md:text-3xl font-bold leading-tight">
-          Build Future-Ready Products
-        </h2>
-        <ul className="list-disc ml-4 text-sm md:text-base">
-          <li>Full-stack Web Development</li>
-          <li>Custom Business Solutions</li>
-          <li>Mobile App Integration</li>
-          <li>UI/UX Design & Branding</li>
-        </ul>
-      </div>
-
-      {/* ✅ Contact Form Wrapper */}
-      <div className="w-full flex justify-end">
-        <div className="w-full max-w-md mr-4 md:mr-12">
+      {/* ✅ Contact Form */}
+      <div className="w-full md:w-1/2 flex justify-end z-10">
+        <div className="w-full max-w-md md:mr-12">
           <div className="bg-black bg-opacity-20 backdrop-blur-sm p-4 rounded-t-lg mb-2 shadow">
             <h2 className="text-xl md:text-2xl font-bold text-green-400">
               Let’s Build Something Amazing
@@ -97,6 +79,22 @@ const Hero = () => {
             </form>
           </div>
         </div>
+      </div>
+
+      {/* ✅ Animated Text Block – will move below form on mobile */}
+      <div
+        ref={textRef}
+        className="w-full md:w-1/2 max-w-md bg-black bg-opacity-50 text-white rounded-lg backdrop-blur-sm p-4 space-y-4 mt-6 md:mt-0 md:absolute md:left-6 md:bottom-20"
+      >
+        <h2 className="text-xl md:text-3xl font-bold leading-tight">
+          Build Future-Ready Products
+        </h2>
+        <ul className="list-disc pl-5 text-sm md:text-base">
+          <li>Full-stack Web Development</li>
+          <li>Custom Business Solutions</li>
+          <li>Mobile App Integration</li>
+          <li>UI/UX Design & Branding</li>
+        </ul>
       </div>
     </section>
   );
